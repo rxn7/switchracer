@@ -31,7 +31,7 @@ function SetCurrentLetter(letter) {
     currentLetter = letter;
     let letterRect = letter.element.getBoundingClientRect();
     let wordContainerRect = wordContainerElement.getBoundingClientRect();
-    caretElement.style.left = `${letterRect.left - wordContainerRect.left}px`;
+    caretElement.style.left = `${letterRect.left - wordContainerRect.left - 1.5}px`;
     caretElement.style.top = `${letterRect.top - wordContainerRect.top}px`;
     caretElement.style.height = `${letterRect.height}px`;
 }

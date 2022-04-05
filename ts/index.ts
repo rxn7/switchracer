@@ -42,7 +42,7 @@ function SetCurrentLetter(letter: Letter): void {
 	let letterRect: DOMRect = letter.element.getBoundingClientRect();
 	let wordContainerRect: DOMRect = wordContainerElement.getBoundingClientRect();
 
-	caretElement.style.left = `${letterRect.left - wordContainerRect.left}px`;
+	caretElement.style.left = `${letterRect.left - wordContainerRect.left - 1.5}px`;
 	caretElement.style.top = `${letterRect.top - wordContainerRect.top}px`;
 	caretElement.style.height = `${letterRect.height}px`;
 }
