@@ -11,22 +11,21 @@ let currentLetter: Letter;
 let cursorPosition = 0;
 
 window.addEventListener('keydown', ev => {
+	ev.preventDefault();
+
 	switch(ev.key) {
 		case 'Backspace':
 			if(cursorPosition > 0) {
 				letters[--cursorPosition].element.className = "letter-default";
-		}
-			break;
+			}
 
-		case 'Space': 
-			cursorPosition++;
 			break;
-
 		default:
 			if(ev.key.length == 1) {
 				currentLetter.element.className = ev.key == currentLetter.value ? 'letter-correct' : 'letter-incorrent';
 				cursorPosition++;
 			}
+
 			break;
 	}
 
