@@ -45,7 +45,6 @@ function SetCurrentLetter(letter: Letter): void {
 
 	caretElement.style.left = `${letterRect.left - wordContainerRect.left}px`;
 	caretElement.style.top = `${letterRect.top - wordContainerRect.top}px`;
-	caretElement.style.width = `${letterRect.width}px`;
 	caretElement.style.height = `${letterRect.height}px`;
 }
 

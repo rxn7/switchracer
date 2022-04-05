@@ -10,21 +10,12 @@ body{
 	text-shadow: 3px 3px #f00;
 }
 #typing-area{
+	position: relative;
 	overflow: hidden;
-
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
+	margin: 5px auto;
 	border: 1px solid gray;
 	border-radius: 20px;
-
 	max-width: 800px;
-	max-height: 600px;
-
-	width: 80vw;
-	height: 60vh;
 }
 #word-container{
 	padding: 20px;
@@ -45,6 +36,8 @@ body{
 	color: #555;
 }
 #caret{
+	transition: left 0.05s linear, top 0.05s linear;
 	position: absolute;
-	background-color: rgba(255, 200, 0, 0.2);
+	background-color: rgb(255, 200, 0, 1);
+	width: 3px;
 }
