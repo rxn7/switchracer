@@ -23,7 +23,7 @@ export class Dictionary {
                     }
                 }
             };
-            xhr.open('GET', '/data/words.txt');
+            xhr.open('GET', '../data/words.txt');
             xhr.send();
         });
     }
