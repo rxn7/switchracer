@@ -33,7 +33,7 @@ export class Dictionary {
 		});
 	}
 
-	public GetWords(count: number): string[] {
+	public GetRandomWords(count: number): string[] {
 		let result: string[] = [];
 
 		while(count-- > 0) {
