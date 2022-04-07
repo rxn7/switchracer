@@ -27,7 +27,7 @@ export class Dictionary {
             xhr.send();
         });
     }
-    GetWords(count) {
+    GetRandomWords(count) {
         let result = [];
         while (count-- > 0) {
             result.push(this.words[Math.floor(Math.random() * this.words.length)]);
