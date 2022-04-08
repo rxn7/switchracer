@@ -13,8 +13,7 @@ export class Dictionary {
 		return this.words.length;
 	}
 
-	public LoadWords(): Promise<void> {
-		return new Promise((resolve, reject) => {
+	public LoadWords(): Promise<void> { return new Promise((resolve, reject) => {
 			let xhr: XMLHttpRequest = new XMLHttpRequest();
 			xhr.onreadystatechange = (): void => {
 				if(xhr.readyState == 4) {
