@@ -53,7 +53,7 @@ function InitChallenge(): void {
 	});
 
 	letters = [];
-	let challengeWords: string[] = dictionary.GetWords(wordCount);
+	let challengeWords: string[] = dictionary.GetRandomWords(wordCount);
 
 	for(let i=0; i<challengeWords.length; ++i) {
 		for(let j=0; j<challengeWords[i].length; ++j) {

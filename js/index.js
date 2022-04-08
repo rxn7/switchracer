@@ -41,7 +41,7 @@ function InitChallenge() {
         (_a = letter.element.parentElement) === null || _a === void 0 ? void 0 : _a.removeChild(letter.element);
     });
     letters = [];
-    let challengeWords = dictionary.GetWords(wordCount);
+    let challengeWords = dictionary.GetRandomWords(wordCount);
     for (let i = 0; i < challengeWords.length; ++i) {
         for (let j = 0; j < challengeWords[i].length; ++j) {
             letters.push(new Letter(challengeWords[i][j]));
