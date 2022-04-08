@@ -15,7 +15,13 @@ window.addEventListener('keydown', ev => {
 
 	switch(ev.key) {
 		case 'Backspace':
-			if(cursorPosition > 0) {
+			if(ev.ctrlKey) {
+				let i=0;
+				while(cursorPosition > 0 && (i == 0 || letters[cursorPosition-1].value != ' ')){
+					letters[--cursorPosition].element.className = "letter-default";
+					++i;
+				}
+			} else if(cursorPosition > 0) {
 				letters[--cursorPosition].element.className = "letter-default";
 			}
 
