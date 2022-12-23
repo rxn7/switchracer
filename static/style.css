@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Share+Tech+Mono&display=swap');
+
+body {
+	margin: 0;
+	background-color: #282828;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 100vh;
+	width: 100vw;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 100%;
+	width: 100%;
+}
+
+#header-title {
+	font-family: 'IBM Plex Mono', monospace;
+	font-size: 50px;
+	text-align: center;
+	text-shadow: 3px 3px #f00;
+}
+
+#typing-area {
+	position: relative;
+	overflow: hidden;
+	margin: 5px auto;
+	border: 1px solid gray;
+	border-radius: 20px;
+	width: fit-content;
+	max-width: 800px;
+}
+
+#word-container {
+	padding: 20px;
+	font-size: 40px;
+	display: inline-block;
+}
+
+pre {
+	font-family: 'Share Tech Mono', monospace;
+	user-select: none;
+	display: inline;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+.letter-correct {
+	color: #fff;
+}
+
+.letter-incorrect {
+	color: #f00;
+	border-bottom: 1px solid #f00;
+}
+
+.letter-default {
+	color: #555;
+}
+
+#caret {
+	transition: left 0.05s linear, top 0.05s linear;
+	position: absolute;
+	background-color: rgb(255, 200, 0, 1);
+	width: 3px;
+}
+
+#stats {
+	font-family: 'IBM Plex Mono', monospace;
+	text-align: center;
+	display: none;
+}
+
+#try-again-btn {
+	user-select: none;
+	text-align: center;
+	margin: auto auto;
+	width: 150px;
+	height: 100px;
+	font-family: 'Share Tech Mono', monospace;
+	font-size: 25px;
+}
