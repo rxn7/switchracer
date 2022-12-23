@@ -1,4 +1,4 @@
-import { wordContainerElement } from './index.js';
+import { TypingArea } from './typingArea.js';
 export var LetterStatus;
 (function (LetterStatus) {
     LetterStatus[LetterStatus["DEFAULT"] = 0] = "DEFAULT";
@@ -13,7 +13,7 @@ export class Letter {
         this.element.textContent = value;
         this.element.classList.add('letter');
         this.element.classList.add('letter-default');
-        wordContainerElement.appendChild(this.element);
+        TypingArea.wordContainerElement.appendChild(this.element);
     }
     destroy() {
         this.element.parentElement?.removeChild(this.element);
