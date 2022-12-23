@@ -1,4 +1,5 @@
-import { Letter } from './letter'
+import { Letter } from './letter.js'
+import { TypingArea } from './typingArea.js'
 
 export namespace Caret {
 	const caretElement: HTMLDivElement = document.getElementById('caret') as HTMLDivElement
@@ -11,9 +12,9 @@ export namespace Caret {
 		caretElement.style.display = 'block'
 	}
 
-	export function moveToLetter(letter: Letter, wordContainerElement: HTMLDivElement): void {
+	export function moveToLetter(letter: Letter): void {
 		let letterRect: DOMRect = letter.element.getBoundingClientRect()
-		let wordContainerRect: DOMRect = wordContainerElement.getBoundingClientRect()
+		let wordContainerRect: DOMRect = TypingArea.wordContainerElement.getBoundingClientRect()
 
 		caretElement.style.left = `${letterRect.left - wordContainerRect.left - 1.5}px`
 		caretElement.style.top = `${letterRect.top - wordContainerRect.top}px`

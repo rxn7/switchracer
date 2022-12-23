@@ -29,11 +29,11 @@ main {
 #typing-area {
 	position: relative;
 	overflow: hidden;
-	margin: 5px auto;
-	border: 1px solid gray;
-	border-radius: 20px;
+	margin: auto auto;
+	/* border: 1px solid gray; */
+	/* border-radius: 20px; */
 	width: fit-content;
-	max-width: 800px;
+	max-width: 80%;
 }
 
 #word-container {
@@ -74,6 +74,7 @@ pre {
 	font-family: 'IBM Plex Mono', monospace;
 	text-align: center;
 	display: none;
+	font-size: 1.8em;
 }
 
 #try-again-btn {

@@ -1,4 +1,4 @@
-import { wordContainerElement } from './index.js'
+import { TypingArea } from './typingArea.js'
 
 export enum LetterStatus {
 	DEFAULT,
@@ -19,7 +19,7 @@ export class Letter {
 		this.element.classList.add('letter')
 		this.element.classList.add('letter-default')
 
-		wordContainerElement.appendChild(this.element)
+		TypingArea.wordContainerElement.appendChild(this.element)
 	}
 
 	public destroy(): void {
