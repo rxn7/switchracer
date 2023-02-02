@@ -2,19 +2,27 @@ import { Letter, LetterStatus } from './letter.js'
 import { TimeHelper } from './timeHelper.js'
 
 export namespace Stats {
+	export type Props = {
+		wpm: number
+		cpm: number
+		correctLetterCount: number
+		accuracyPercent: number
+		wordCount: number
+		letters: Letter[]
+		millisecondsPassed: number
+	}
+
 	const statsElement: HTMLParagraphElement = document.getElementById('stats') as HTMLParagraphElement
 
-	export function show(wpm: number, cpm: number, wordCount: number, letters: Letter[], millisecondsPassed: number): void {
+	export function show(props: Props): void {
 		statsElement.style.display = 'block'
 
-		const correctLetterCount: number = letters.filter(l => l.status === LetterStatus.CORRECT).length
-		const accuracyPercent: number = (correctLetterCount / letters.length) * 100
-		const timeStr: string = TimeHelper.millisecondsToHumanReadableTime(millisecondsPassed)
+		const timeStr: string = TimeHelper.millisecondsToHumanReadableTime(props.millisecondsPassed)
 
 		statsElement.innerHTML = `Time: ${timeStr}<br>`
-		statsElement.innerHTML += `WPM: ${wpm | 0}, CPM: ${cpm | 0}<br>`
-		statsElement.innerHTML += `Accuracy: ${accuracyPercent.toFixed(2)}%, ${correctLetterCount | 0}/${letters.length}<br>`
-		statsElement.innerHTML += `Words: ${wordCount | 0}`
+		statsElement.innerHTML += `WPM: ${props.wpm | 0}, CPM: ${props.cpm | 0}<br>`
+		statsElement.innerHTML += `Accuracy: ${props.accuracyPercent.toFixed(2)}%, ${props.correctLetterCount | 0}/${props.letters.length}<br>`
+		statsElement.innerHTML += `Words: ${props.wordCount | 0}`
 	}
 
 	export function hide(): void {

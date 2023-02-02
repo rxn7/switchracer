@@ -67,16 +67,27 @@ export namespace Switchracer {
 	function onFinish(): void {
 		status = GameStatus.FINISH
 
-		const characterCount: number = letters.filter(x => x.status === LetterStatus.CORRECT).length
+		const correctCharacterCount: number = letters.filter(x => x.status === LetterStatus.CORRECT).length
+		const accuracyPercent: number = (correctCharacterCount / letters.length) * 100
 
 		const now: Date = new Date()
 		const millisecondsPassed: number = +now - +startTime
 		const minutesPassed: number = millisecondsPassed / 1000 / 60
 
-		const cpm: number = characterCount / minutesPassed
+		const cpm: number = correctCharacterCount / minutesPassed
 		const wpm: number = cpm / 5
 
-		Stats.show(wpm, cpm, wordCount, letters, millisecondsPassed)
+		const stats: Stats.Props = {
+			accuracyPercent: accuracyPercent,
+			correctLetterCount: correctCharacterCount,
+			millisecondsPassed: millisecondsPassed,
+			cpm: cpm,
+			wpm: wpm,
+			wordCount: wordCount,
+			letters: letters,
+		}
+
+		Stats.show(stats)
 		Caret.hide()
 		TypingArea.hide()
 		TryAgainButton.show()
